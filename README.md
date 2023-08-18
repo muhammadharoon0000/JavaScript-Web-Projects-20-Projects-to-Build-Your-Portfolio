@@ -1,1 +1,1 @@
-# JavaScript 20 Projects in 20 Days
+# JavaScript 20 Projects in 20 Days (On Going)
