@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Light and dark mode</title>
+    <link rel="icon" type="image/png" href="favicon.png" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="theme-switch-wrapper">
+      <span id="toggle-icon">
+        <span class="toggle-text">Light Mode</span>
+        <i class="fas fa-sun"></i>
+      </span>
+      <label class="theme-switch">
+        <input type="checkbox" />
+        <div class="slider round"></div>
+      </label>
+    </div>
+    <nav id="nav">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <section id="home">
+      <div class="title-group">
+        <h1>Custom Title Here</h1>
+        <h2>Welcome Here</h2>
+      </div>
+    </section>
+    <section id="about">
+      <h1>Illustration</h1>
+      <div class="about-container">
+        <div class="image-container">
+          <h2>Website Innovation</h2>
+          <img src="img/undraw_proud_coder_light.svg" id="image1" alt="" />
+        </div>
+        <div class="image-container">
+          <h2>Solve your Problem</h2>
+          <img src="img/undraw_feeling_proud_light.svg" id="image2" alt="" />
+        </div>
+        <div class="image-container">
+          <h2>High Concept</h2>
+          <img src="img/undraw_conceptual_idea_light.svg" id="image3" alt="" />
+        </div>
+      </div>
+    </section>
+    <section id="projects">
+      <h1>Button</h1>
+      <div class="bttons">
+        <button class="primary">primary</button>
+        <button class="secondary">secondary</button>
+        <button class="primary" disabled>disabled</button>
+        <button class="outline">Outline</button>
+        <button class="secondary outline">Alt outline</button>
+        <button class="outline" disabled>disabled</button>
+      </div>
+      <div class="text-box" id="text-box">
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum aut
+          accusantium quisquam a est modi quibusdam voluptas praesentium ad?
+          Eius blanditiis animi repellendus repellat iste vel quisquam quia
+          provident! Tempora!
+        </p>
+      </div>
+    </section>
+    <section id="contact">
+      <div class="social-icons">
+        <i class="fab fa-github"></i>
+        <i class="fab fa-codepen"></i>
+        <i class="fab fa-linkedin"></i>
+        <i class="fab fa-instagram"></i>
+        <i class="fab fa-youtube"></i>
+      </div>
+    </section>
+    <!-- <script src="/jquery.js"></script> -->
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.js"
+      integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+      crossorigin="anonymous"
+    ></script>
+    <script src="script.js"></script>
+  </body>
+</html>

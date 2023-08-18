@@ -1,0 +1,137 @@
+:root {
+    --border-radius: 20px;
+}
+
+html {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    background: rgb(0, 150, 255, 0.5);
+}
+
+h1 {
+    width: 300px;
+    margin: 20px auto 20px;
+    padding: 10px;
+    text-align: center;
+    color: wheat;
+    border-radius: var(--border-radius);
+    text-transform: uppercase;
+    background-color: rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.item {
+    width: 300px;
+    padding: 20px;
+    margin: 20px;
+    border-radius: var(--border-radius);
+    background-color: rgba(0, 233, 44, 0.6);
+}
+
+.name {
+    vertical-align: sub;
+    font-size: 20px;
+    padding: 10px;
+}
+
+.item img {
+    height: 20px;
+    width: 30px;
+    margin-right: 10px;
+}
+
+.name a {
+    text-decoration: none;
+    color: whitesmoke;
+}
+
+.close img {
+    width: 100%;
+    height: 100%;
+}
+
+.close {
+    float: right;
+    z-index: 2;
+    height: 15px;
+    width: 20px;
+    margin: 20px;
+    display: block;
+    cursor: pointer;
+}
+
+.modal-container {
+    background: rgba(0, 0, 0, 0.6);
+    position: fixed;
+    display: none;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.show-modal {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal {
+    background: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+    max-width: 95%;
+    width: 500px;
+    animation: modalopen 1s;
+}
+
+.heading {
+    padding: 5px 20px;
+    vertical-align: sub;
+    font-size: 25px;
+    /* display: inline; */
+    background-color: rgba(82, 150, 189, 0.6);
+}
+
+.close {
+    float: right;
+    height: 20px;
+}
+
+.close img {
+    height: 100%;
+    width: 100%;
+}
+
+.main-modal {
+    padding: 20px;
+}
+
+.label {
+    font-weight: bold;
+    display: block;
+    padding: 5px;
+}
+
+.input {
+    width: 90%;
+    margin: 8px auto;
+    height: 20px;
+}
+
+button {
+    border: 1px solid rgba(221, 20, 20, 0.377);
+    border-radius: 20px;
+    width: 20%;
+    height: 30px;
+    background-color: rgba(81, 108, 124, 0.3);
+}
