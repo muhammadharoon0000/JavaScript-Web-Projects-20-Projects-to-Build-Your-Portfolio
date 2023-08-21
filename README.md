@@ -1,4 +1,4 @@
-# JavaScript 20 Projects in 20 Days (On Going)
+# JavaScript 20 Projects in 20 Days (Udemy) (On Going)
  Technologies/Languages used:
  1: HTML.
  2: CSS.
