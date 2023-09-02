@@ -18,16 +18,116 @@ const computerScissors = $('#computerScissors');
 const computerLizard = $('#computerLizard');
 const computerSpock = $('#computerSpock');
 
-const allGameIcons = $('.far');
+const allGameIcons = document.querySelectorAll('.far');
+let computerChoice = '';
+let computerScoreNumber = 0;
+let playerScoreNumber = 0;
 
-function resetAllGameIcons() {
-  for (const item of allGameIcons) {
-    console.log(item.classList.remove('selected'));
+const choices = {
+  Rock: { name: 'Rock', defeats: ['Scissors', 'Lizard'] },
+  Paper: { name: 'Paper', defeats: ['Rock', 'Spock'] },
+  Scissors: { name: 'Scissors', defeats: ['Paper', 'Lizard'] },
+  Lizard: { name: 'Lizard', defeats: ['Paper', 'Spock'] },
+  Spock: { name: 'Spock', defeats: ['Scissors', 'Rock'] },
+};
+
+function computerRandomChoice() {
+  let randomValue = Math.random();
+  if (randomValue <= 0.2) {
+    computerChoice = 'Rock';
   }
+  else if (randomValue <= 0.4) {
+    computerChoice = 'Paper';
+  }
+  else if (randomValue <= 0.6) {
+    computerChoice = 'Scissors';
+  }
+  else if (randomValue <= 0.8) {
+    computerChoice = 'Lizard';
+  }
+  else {
+    computerChoice = 'Spock';
+  }
+  console.log(randomValue);
 }
 
-const player = $('#player').find('.far').on('click', function (e) {
+function resetAllGameIcons() {
+  allGameIcons.forEach(element => {
+    element.classList.remove('selected');
+  });
+}
+
+function displayComputerChoice() {
+  switch (computerChoice) {
+    case 'Rock':
+      computerRock.addClass('selected');
+      computerChoiceEL.text(" --- Rock");
+      break;
+    case 'Paper':
+      computerPaper.addClass('selected');
+      computerChoiceEL.text(" --- Paper");
+      break;
+    case 'Scissors':
+      computerScissors.addClass('selected');
+      computerChoiceEL.text(" --- Scissors");
+      break;
+    case 'Lizard':
+      computerLizard.addClass('selected');
+      computerChoiceEL.text(" --- Lizard");
+      break;
+    case 'Spock':
+      computerSpock.addClass('selected');
+      computerChoiceEL.text(" --- Spock");
+      break;
+  }
+};
+
+$('#resetbtn').on('click', resetAll);
+
+function resetAll() {
+  console.log("object");
+  playerScoreNumber = 0;
+  computerScoreNumber = 0;
+  playerScoreEl.text(playerScoreNumber);
+  computerScoreEl.text(computerScoreNumber);
+  playerChoiceEL.text('');
+  computerChoiceEL.text('');
+  resultText.text('');
   resetAllGameIcons();
+}
+
+function updateScore(playerChoice) {
+  console.log(playerChoice, computerChoice);
+  if (playerChoice === computerChoice) {
+    resultText.text("Tie");
+  } else {
+    const choice = choices[playerChoice];
+    if (choice.defeats.indexOf(computerChoice) > -1) {
+      resultText.text("You Won!");
+      playerScoreNumber++;
+      playerScoreEl.text(playerScoreNumber);
+    }
+    else {
+      resultText.text("You Lost!");
+      computerScoreNumber++;
+      computerScoreEl.text(computerScoreNumber);
+    }
+  }
+
+}
+
+
+function checkResult(playerChoice) {
+  resetAllGameIcons();
+  computerRandomChoice();
+  displayComputerChoice();
+  updateScore(playerChoice);
+}
+
+
+
+const player = $('#player').find('.far').on('click', function (e) {
+  checkResult(this.title);
   switch (this.title) {
     case 'Rock':
       playerRock.addClass('selected');
@@ -53,11 +153,6 @@ const player = $('#player').find('.far').on('click', function (e) {
 });
 
 
-const choices = {
-  rock: { name: 'Rock', defeats: ['scissors', 'lizard'] },
-  paper: { name: 'Paper', defeats: ['rock', 'spock'] },
-  scissors: { name: 'Scissors', defeats: ['paper', 'lizard'] },
-  lizard: { name: 'Lizard', defeats: ['paper', 'spock'] },
-  spock: { name: 'Spock', defeats: ['scissors', 'rock'] },
-};
 
+
+resetAll();
